@@ -177,6 +177,61 @@
 (require 'init-local nil t)
 
 
+;;----------------------------------------------------------------------------
+;; Enable the sacred 80-column rule
+;;----------------------------------------------------------------------------
+(require 'whitespace)
+(setq-default
+ whitespace-line-column 80
+ whitespace-style '(face lines-tail))
+(global-whitespace-mode t)
+
+
+;;----------------------------------------------------------------------------
+;; Automatically select *Help* buffer on opening
+;;----------------------------------------------------------------------------
+(setq help-window-select t)
+
+
+;;----------------------------------------------------------------------------
+;; Mark rings tweaks
+;;----------------------------------------------------------------------------
+(setq mark-ring-max 6)
+(setq global-mark-ring-max 6)
+
+(defun xah-pop-local-mark-ring ()
+  "Move cursor to last mark position of current buffer.
+Call this repeatedly will cycle all positions in `mark-ring'.
+URL `http://ergoemacs.org/emacs/emacs_jump_to_previous_position.html'
+Version 2016-04-04"
+  (interactive)
+  (set-mark-command t))
+
+(bind-key* (kbd "<f7>") 'pop-global-mark)
+(bind-key* (kbd "<f8>") 'xah-pop-local-mark-ring)
+
+
+;;----------------------------------------------------------------------------
+;; Convenient remapping of frequently used keys
+;;----------------------------------------------------------------------------
+(require 'bind-key)
+(bind-key* (kbd "M-j") 'backward-char)
+(bind-key* (kbd "M-l") 'forward-char)
+(bind-key* (kbd "M-i") 'previous-line)
+(bind-key* (kbd "M-k") 'next-line)
+
+(bind-key* (kbd "M-o") 'other-window)
+
+
+(bind-key* (kbd "M-SPC") 'set-mark-command)
+(bind-key* (kbd "<f5>") 'execute-extended-command)
+
+;;----------------------------------------------------------------------------
+;; To open files in already existing emacs process
+;;----------------------------------------------------------------------------
+;; (server-start)
+
+
 
 (provide 'init)
 
