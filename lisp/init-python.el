@@ -12,6 +12,9 @@
 
 (elpy-enable)
 (setq elpy-rpc-backend "jedi")
+(setq elpy-rpc-python-command "python3")
+(setq python-shell-buffer-name "python3")
+(setq python-shell-interpreter "python3")
 ;;(setenv "WORKON_HOME" "/home/qwe/code/python/sandbox/")
 ;;(pyvenv-activate "/home/qwe/code/python/sandbox/venv/")
 
