@@ -227,9 +227,13 @@ Version 2016-04-04"
 (bind-key* (kbd "<f5>") 'execute-extended-command)
 
 ;;----------------------------------------------------------------------------
-;; To open files in already existing emacs process
+;; Disable pesky window dedication
 ;;----------------------------------------------------------------------------
-;; (server-start)
+(defun set-window-undedicated-p (window flag)
+  "Never set WINDOW FLAG 'dedicated = t'."
+  flag)
+
+(advice-add 'set-window-dedicated-p :override #'set-window-undedicated-p)
 
 
 
