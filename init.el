@@ -249,6 +249,7 @@ Version 2016-04-04"
 (global-set-key (kbd "C-c g") 'avy-goto-word-1)
 (global-set-key (kbd "C-c J") 'avy-goto-subword-0)
 (global-set-key (kbd "C-c G") 'avy-goto-subword-1)
+(global-set-key (kbd "C-c i") 'avy-goto-line)
 
 
 
