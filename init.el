@@ -242,6 +242,13 @@ Version 2016-04-04"
 (setq make-backup-files nil)
 (setq create-lockfiles nil)
 
+;;----------------------------------------------------------------------------
+;; setup avy keybindings
+;;----------------------------------------------------------------------------
+(global-set-key (kbd "C-c j") 'avy-goto-word-0)
+(global-set-key (kbd "C-c g") 'avy-goto-word-1)
+(global-set-key (kbd "C-c J") 'avy-goto-subword-0)
+(global-set-key (kbd "C-c G") 'avy-goto-subword-1)
 
 
 
