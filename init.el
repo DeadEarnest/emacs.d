@@ -226,6 +226,7 @@ Version 2016-04-04"
 (bind-key* (kbd "M-SPC") 'set-mark-command)
 (bind-key* (kbd "<f5>") 'execute-extended-command)
 
+
 ;;----------------------------------------------------------------------------
 ;; Disable pesky window dedication
 ;;----------------------------------------------------------------------------
@@ -234,6 +235,13 @@ Version 2016-04-04"
   flag)
 
 (advice-add 'set-window-dedicated-p :override #'set-window-undedicated-p)
+
+;;----------------------------------------------------------------------------
+;; Disable auto-backup and lockfiles
+;;----------------------------------------------------------------------------
+(setq make-backup-files nil)
+(setq create-lockfiles nil)
+
 
 
 
